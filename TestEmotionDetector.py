@@ -78,18 +78,67 @@ def video_prediction_emotion(f):
 
 app = Flask(__name__)
 
-
-@app.route('/emotion')
-def emotion():
-
-  
-
-   return video_prediction_emotion(f=40)
-
+@app.route('/emotion/<int:frame>')
+def emotion(frame):
+    return video_prediction_emotion(f=frame)
 
 if __name__ == '__main__':
-   
-    app.run( port=5000,debug=True)
+    app.run(port=5000, debug=True)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# import cv2
+# import eventlet
+# from flask import Flask
+# from flask_socketio import SocketIO, emit
+
+# app = Flask(__name__)
+# socketio = SocketIO(app, async_mode='eventlet')
+
+# eventlet.monkey_patch()
+
+# def capture_frames():
+#     camera = cv2.VideoCapture('upload//v1.mp4')
+#     while True:
+#         ret, frame = camera.read()
+#         if ret:
+#             # Process the frame here
+#             # ...
+#             encoded_frame = cv2.imencode('.jpg', frame)[1].tobytes()
+#             eventlet.sleep(0)
+#             socketio.emit('frame', encoded_frame)
+
+# @socketio.on('connect')
+# def on_connect():
+#     socketio.start_background_task(capture_frames)
+
+# if __name__ == '__main__':
+#     socketio.run(app,port=5000,debug=True)
