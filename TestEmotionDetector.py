@@ -26,13 +26,13 @@ emotion_model.load_weights("model/emotion_model.h5")
 emotionSeries=[]
 
 
-# start the webcam feed
-# cap = cv2.VideoCapture(0)
-# add="http://192.168.1.4:8080/video"
-# cap.open(add)
+# # start the webcam feed
+# # cap = cv2.VideoCapture(0)
+# # add="http://192.168.1.4:8080/video"
+# # cap.open(add)
 
-# # pass here your video path
-# # you may download one from here : https://www.pexels.com/video/three-girls-laughing-5273028/
+# # # pass here your video path
+# # # you may download one from here : https://www.pexels.com/video/three-girls-laughing-5273028/
 
 
 
@@ -42,7 +42,7 @@ emotionSeries=[]
 
 def video_prediction_emotion(f):
      
-     cap = cv2.VideoCapture("G:\\Downloads\\Telegram Desktop\MATLAB_DRIVE\\Emotion_detection_with_CNN-main\\videos\\v1.mp4")
+     cap = cv2.VideoCapture("upload\\v1.mp4")
      cap.set(cv2.CAP_PROP_POS_FRAMES, f)
 
    
@@ -89,4 +89,7 @@ def emotion():
 
 if __name__ == '__main__':
    
-    app.run(debug=True)
+    app.run( port=5000,debug=True)
+
+
+
