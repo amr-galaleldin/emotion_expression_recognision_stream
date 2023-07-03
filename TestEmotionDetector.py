@@ -83,7 +83,7 @@ def emotion(frame):
     return video_prediction_emotion(f=frame)
 
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+    app.run( debug=True)
 
 
 
