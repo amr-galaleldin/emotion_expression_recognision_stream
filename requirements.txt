@@ -1,0 +1,5 @@
+gunicorn
+flask
+keras
+opencv-python
+numpy
