@@ -1,6 +1,6 @@
 gunicorn
 flask
 keras
-opencv-python
 numpy
 tensorflow
+opencv-python-headless
